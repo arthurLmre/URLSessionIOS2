@@ -11,7 +11,7 @@ import Foundation
 struct SeriesCharacter {
     let characterID: Int
     let name: String
-    let imageURL: String
+    let imageURL: URL
     let creationDate: Date
 }
 

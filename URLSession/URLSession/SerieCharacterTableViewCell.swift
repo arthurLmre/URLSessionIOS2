@@ -9,6 +9,13 @@
 import UIKit
 
 class SerieCharacterTableViewCell: UITableViewCell {
+    private static let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.timeStyle = .short
+        return formatter
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
     }
@@ -16,8 +23,11 @@ class SerieCharacterTableViewCell: UITableViewCell {
         fatalError("init(coder: ) has not been implemented")
     }
     
-    func configure(title: String) {
-        detailTextLabel?.text = title
+    func configure(title: String, date: Date, imageURL: URL) {
+        textLabel?.text = title
+        detailTextLabel?.text = SerieCharacterTableViewCell.dateFormatter.string(from: date)
+        
+        imageView?.image(from: imageURL)
     }
     
 }

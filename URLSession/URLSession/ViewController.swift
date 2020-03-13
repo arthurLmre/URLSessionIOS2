@@ -101,7 +101,7 @@ class ViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableItem(SerieCharacterTableViewCell.self, at: indexPath)
         let serieCharacter = seriesCharacter[indexPath.row]
-        cell.configure(title: serieCharacter.name)
+        cell.configure(title: serieCharacter.name, date: serieCharacter.creationDate, imageURL: serieCharacter.imageURL)
         return cell
     }
 
